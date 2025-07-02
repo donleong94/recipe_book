@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.recipebook.ui.features.common.RecipeForm
+import com.example.recipebook.ui.theme.AppColor
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -32,6 +33,7 @@ fun CreateRecipeScreen(
         topBar = {
             TopAppBar(
                 title = { Text("Add New Recipe") },
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = AppColor.Purple80),
                 navigationIcon = {
                     IconButton(onClick = onRecipeCreated) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")

@@ -14,6 +14,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -23,6 +24,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.recipebook.ui.features.common.ConfirmationDialog
 import com.example.recipebook.ui.features.common.RecipeForm
+import com.example.recipebook.ui.theme.AppColor
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -56,6 +58,7 @@ fun RecipeDetailScreen(
         topBar = {
             TopAppBar(
                 title = { Text(uiState.recipe?.name ?: "Recipe Detail") },
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = AppColor.Purple80),
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
                         Icon(
